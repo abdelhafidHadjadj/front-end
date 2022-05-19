@@ -1,0 +1,49 @@
+#contract-section {
+  display: flex;
+  gap: 3rem;
+  margin: 2rem auto auto 12rem;
+  position: absolute;
+}
+
+#addContract-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  height: 630px;
+  width: 400px;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 1rem;
+}
+#addContract-component form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#addContract-component form input {
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+}
+
+.boxInputContract {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#closeBox {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.deal-price-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

@@ -1,0 +1,78 @@
+header {
+  display: flex;
+  width: 100%;
+  top: 0;
+  background-color: var(--primary-color);
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+#navbar {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 1rem;
+  min-width: 1200px;
+  margin: 0 auto 0 auto;
+  justify-content: space-between;
+}
+
+#logoBox {
+  width: 130px;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+#logo {
+  width: 130px;
+  position: relative;
+}
+
+#list-Items {
+  display: flex;
+  list-style: none;
+  min-width: 600px;
+  justify-content: space-between;
+}
+#list-Items a {
+  text-decoration: none;
+  color: var(--third-color);
+  border-bottom: 1.5px solid;
+  border-color: transparent;
+  padding: 0.1rem;
+}
+#list-Items a:hover {
+  transition: 700ms ease;
+  border-color: rgb(12, 243, 235);
+}
+#loginAndSignUpBox {
+  display: flex;
+  gap: 3rem;
+}
+#btn-signUp {
+  color: var(--third-color);
+  font-size: 16px;
+  background-color: rgba(77, 255, 0, 0.371);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.442);
+  cursor: pointer;
+}
+#btn-login {
+  color: var(--third-color);
+  font-size: 16px;
+  cursor: pointer;
+  background-color: rgba(17, 221, 240, 0.325);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.442);
+}
+#btn-login:hover {
+  background-color: rgba(17, 221, 240, 0.804);
+  transition: 500ms ease;
+}
+#btn-signUp:hover {
+  background-color: rgba(77, 255, 0, 0.623);
+  transition: 500ms ease;
+}

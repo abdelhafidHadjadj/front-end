@@ -1,0 +1,41 @@
+#about-section {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  height: 500px;
+  margin: 28rem auto 5rem auto;
+  max-width: 1100px;
+}
+
+#aboutUs-image {
+  width: 360px;
+  height: 450px;
+  border-radius: 200px 200px 0 0;
+  border: 12px solid rgba(82, 155, 222, 0.38);
+}
+#second-part-about {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 3rem;
+}
+
+#about-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 22px;
+}
+#about-title hr {
+  width: 400px;
+  height: 1px;
+  border: 0.5px solid rgba(0, 0, 0, 0.226);
+}
+
+#second-part-about p {
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  text-align: justify;
+}

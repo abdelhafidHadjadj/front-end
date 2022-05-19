@@ -1,0 +1,15 @@
+#dashboard-section {
+  margin: 0 0 0 10rem;
+  padding: 1rem;
+}
+
+#radialBox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.leaft-container {
+  width: 250px;
+  height: 250px;
+}

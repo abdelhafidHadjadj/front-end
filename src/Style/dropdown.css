@@ -1,0 +1,37 @@
+.estateDropDown {
+  color: var(--primary-color);
+  border: 1px solid;
+  padding: 0.4rem 1rem;
+  border-radius: 5px 5px 5px 5px;
+  width: 150px;
+  background-color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+}
+.listItems {
+  position: relative;
+  height: 150px;
+  width: 160px;
+  margin: 0;
+  overflow-y: auto;
+}
+.listItems li {
+  list-style-type: none;
+  padding: 0.6rem 1.1rem;
+  margin: 0;
+
+  background-color: var(--second-color);
+  opacity: 0.5;
+}
+.listItems ul {
+  padding: 0;
+}
+.listItems li:hover {
+  background-color: rgba(215, 70, 70, 0.847);
+  transition: 300ms;
+  cursor: pointer;
+}
+
+#dropBox {
+  width: 150px;
+  height: 35px;
+}

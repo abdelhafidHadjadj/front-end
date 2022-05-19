@@ -1,0 +1,124 @@
+#propertyListAdmin-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem auto auto 12rem;
+  position: absolute;
+}
+
+#propertyListAdmin-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1300px;
+
+  overflow: auto;
+  align-items: center;
+  padding: 0 auto 0 auto;
+  margin: 6rem auto auto 2rem;
+}
+
+#propertyListAdmin-inner {
+  display: flex;
+}
+.propertyCard-admin a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 10px 10px 10px 10px;
+  color: var(--primary-color);
+}
+
+.propertyCard-admin #imgCard img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.propertyCard-admin:hover a {
+  background-color: var(--primary-color);
+  color: aliceblue;
+  transition: 500ms ease;
+  border-radius: 10px 10px 10px 10px;
+}
+
+/* style btn delete and update */
+#box-btn-delete-update-admin {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#btn-add-property {
+  display: flex;
+  align-items: center;
+  background-color: rgba(140, 140, 248, 0.774);
+  width: fit-content;
+  padding: 0.3rem 0.7rem;
+  border-radius: 25px;
+  color: var(--second-color);
+  font-weight: 600;
+  cursor: pointer;
+}
+#btn-add-property:active {
+  background-color: rgba(140, 140, 248, 1);
+}
+
+#nav-properties-admin {
+  display: flex;
+  margin: 1rem auto 0 auto;
+}
+
+.btn-contract-admin {
+  border: 1px solid;
+  color: green;
+  border-radius: 50%;
+  padding: 0.3rem 0.3rem 0.1rem 0.3rem;
+}
+.btn-update-contract {
+  display: none;
+}
+.btn-delete-contract {
+  display: none;
+}
+#box-btn-contract-admin {
+  display: flex;
+  justify-content: flex-end;
+}
+/*_____Add property box _____*/
+
+.addProperty-box {
+  display: flex;
+  flex-wrap: wrap;
+
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 500px;
+  height: 500px;
+  gap: 1rem;
+}
+.addPropertyComponent {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  left: 20%;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(189, 201, 211, 0.896);
+}
+.addPropertyComponent input {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 1px solid;
+}
+.addPropertyComponent button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+}
+#btn-close {
+  margin: 0.5rem 0.5rem auto auto;
+  font-size: 25px;
+}

@@ -1,0 +1,161 @@
+.login-signUp-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+}
+
+.first-part-login-signUp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.login-signUp-image {
+  width: 100%;
+  height: 100%;
+}
+#second-part-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 7.5rem;
+  gap: 2rem;
+  width: 50%;
+}
+#second-part-login-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 300px;
+}
+#second-part-login p {
+  max-width: 240px;
+  font-size: 14px;
+  margin-left: 1rem;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+}
+
+#form-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  height: 300px;
+  padding: 0rem 1rem;
+}
+#form-login input {
+  padding: 0.7rem 1rem;
+  border-radius: 20px;
+  width: 250px;
+  border: 1px solid rgba(0, 0, 0, 0.214);
+}
+#form-login button {
+  padding: 0.8rem 1rem;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 150px;
+  background-color: rgba(0, 0, 0, 0.526);
+  border: 1px solid;
+  color: var(--second-color);
+  font-size: 16px;
+  cursor: pointer;
+}
+#form-login button:hover {
+  background-color: var(--primary-color);
+  transition: 500ms ease;
+  border: 1px solid;
+}
+#arrow-icon {
+  fill: var(--second-color);
+
+  height: 18px;
+}
+#line-icon {
+  fill: var(--second-color);
+  stroke: var(--second-color);
+}
+
+#return-icon {
+  position: absolute;
+  top: 10%;
+  left: 53%;
+  border: 1px solid;
+  border-radius: 50%;
+  padding: 0.2rem;
+  color: rgba(0, 0, 0, 0.584);
+}
+
+#return-icon:hover {
+  color: #ffff;
+  background-color: rgba(0, 0, 0, 0.651);
+  transition: 500ms;
+}
+
+/*___________Sign Up style_________________*/
+
+#second-part-signUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 7.5rem;
+  gap: 2rem;
+  width: 50%;
+}
+
+#signUp-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  height: 300px;
+  padding: 0rem 1rem;
+}
+
+#signUp-form input {
+  padding: 0.7rem 1rem;
+  border-radius: 20px;
+  width: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.214);
+}
+
+#second-part-signUp-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 300px;
+}
+
+#return-icon-signUp {
+  position: absolute;
+  top: 10%;
+  left: 53%;
+  border: 1px solid;
+  border-radius: 50%;
+  padding: 0.2rem;
+  color: rgba(0, 0, 0, 0.584);
+}
+
+#signUp-form button {
+  padding: 0.8rem 1rem;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 150px;
+  background-color: rgba(0, 0, 0, 0.526);
+  border: 1px solid;
+  color: var(--second-color);
+  font-size: 16px;
+  cursor: pointer;
+}
+#signUp-form button:hover {
+  background-color: var(--primary-color);
+  transition: 500ms ease;
+  border: 1px solid;
+}
