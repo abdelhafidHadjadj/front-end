@@ -77,7 +77,7 @@ export default function Register() {
               required
             />
             <input type="email" name="email" placeholder="Email" required />
-            <input type="text" placeholder="Phone Number" name="phone" />
+            <input type="number" placeholder="Phone Number" name="phone" />
             <input
               type="password"
               name="password"
@@ -90,7 +90,7 @@ export default function Register() {
               placeholder="Confirm Password"
               required
             />
-            {error && <p>{error}</p>}
+            {error && <p id="errorPwd">{error}</p>}
             <button type="submit">
               Sign Up
               <svg

@@ -1,8 +1,8 @@
-import Map from "./map";
+import NavReports from "./ReportComp/navReport";
 export default function Reports() {
   return (
-    <section>
-      <Map />
+    <section id="report-section">
+      <NavReports />
     </section>
   );
 }

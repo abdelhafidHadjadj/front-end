@@ -1,0 +1,74 @@
+#contractDash-table {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: 0.2rem;
+  height: 59%;
+  width: 100%;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: red;
+}
+#contractDash-table::-webkit-scrollbar {
+  width: 0.8em;
+}
+#contractDash-table::-webkit-scrollbar-thumb {
+  background-color: rgba(137, 186, 242, 0.575);
+  border-radius: 10px;
+}
+#contractDash-table::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(137, 186, 242, 0.575);
+
+  border-radius: 10px;
+}
+#contractDash-table-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 10px;
+
+  background-color: rgba(146, 220, 251, 0.681);
+}
+#contractDash-table-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 10px;
+  background-color: rgba(229, 229, 250, 0.575);
+}
+
+.columnDash {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  padding: 0.8rem 0.3rem;
+  font-size: 14px;
+}
+.columnDash-id {
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  padding: 0.8rem 0.3rem;
+  align-items: center;
+}
+
+.columnDash-status {
+  display: flex;
+  align-items: center;
+
+  width: 60%;
+  gap: 1rem;
+  padding: 0.8rem;
+}
+
+#avatarContractDash {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.agent-boxDash {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}

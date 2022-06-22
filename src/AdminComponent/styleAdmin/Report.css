@@ -1,0 +1,92 @@
+.lineGraph {
+  width: 650px;
+}
+.barGraph {
+  width: 650px;
+  z-index: -2 !important;
+}
+
+#btnGraph-box {
+  display: flex;
+  left: 20%;
+  z-index: -1 !important;
+  cursor: pointer;
+}
+#report-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 4rem auto auto 8rem;
+  position: absolute;
+  width: 90%;
+  z-index: -5;
+}
+#report-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 95%;
+  z-index: -4;
+}
+#report-inner {
+  display: flex;
+
+  width: 50%;
+  position: relative;
+  gap: 1rem;
+  z-index: -3;
+}
+#secondProfits-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 40%;
+  padding: 1rem;
+}
+.profit-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.179);
+  border-radius: 10px;
+  width: 100%;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+.profit-amount {
+  font-size: 28px;
+}
+
+.graphIcon {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+
+#pieComp {
+  display: flex;
+  width: 550px !important;
+  height: 300px;
+}
+
+.prop-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.179);
+  border-radius: 10px;
+  width: 100%;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+#secondProp-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  width: 40%;
+  padding: 1rem;
+}

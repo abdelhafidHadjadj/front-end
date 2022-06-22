@@ -1,76 +1,106 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../Style/home.css";
 import Navbar from "../components/navbar";
-import { Image } from "cloudinary-react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import { DropDown } from "../options/dropdown";
 import { API_URL } from "../config";
 import BestOfferProperties from "./bestOfferProperties";
 import About from "./About";
 import Contact from "./contact";
-import SearchBar from "../options/searchBar";
+import { Link } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai";
 import { useNavigate } from "react-router";
 import { useAuth } from "../authContext";
+import SkeletonElement from "../skeletons/skeletonElement";
+import { PropertyContext } from "../PropertiesContext";
 export default function Home() {
-  const [imageIds, setImagesIds] = useState("");
-  const [message, setMessage] = useState("");
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
 
   const navigate = useNavigate();
   const { user } = useAuth();
+  const { properties } = useContext(PropertyContext);
 
-  async function getImageIds() {
-    try {
-      const res = await fetch(`${API_URL}/getImages`);
-      const data = await res.json();
-      console.log(data);
-      setImagesIds(data);
-    } catch (error) {
-      console.log(error);
-      setMessage("Error in the server");
+  const isSmallScreen = () => {
+    if (window.innerWidth <= 600) {
     }
-  }
-  useEffect(() => getImageIds(), []);
-  // console.log(imageIds);
-  let imageId =
-    "https://res.cloudinary.com/hafid/image/upload/v1650040618/homePage/pymu2zdztn4ypb0h8psk.jpg";
+  };
+  window.addEventListener("resize", isSmallScreen);
 
   return (
     <>
       <main>
         <Navbar />
-        <div id="home-content">
+        <section id="home-content">
           <div id="home-content-inner">
-            <div id="first-content">
+            <div id="first-content" data-aos="fade-right">
               <div id="sloganContent">
-                <h1>Find your perfect home with logo</h1>
+                <h1 id="slogan">
+                  Find your perfect Property with
+                  <br />
+                  Modern House
+                </h1>
               </div>
 
-              <SearchBar />
+              <Link to="properties" id="btn-discover">
+                Discover The Properties
+              </Link>
             </div>
             <div id="second-content">
-              {imageIds && (
-                <Image
-                  id="homeImage"
-                  cloudName="hafid"
-                  publicId={imageId}
-                  width="250"
-                  crop="scale"
-                />
-              )}
+              {!properties && <SkeletonElement type="homePicture" />}
+
+              <img
+                data-aos="fade-up"
+                src="https://res.cloudinary.com/hafid/image/upload/v1650040618/homePage/pymu2zdztn4ypb0h8psk.jpg"
+                alt=""
+                id="homeImage"
+              />
 
               {user?.role === "ADMIN" && (
-                <span id="accountIcon" onClick={() => navigate("admin-page")}>
+                <span
+                  id="accountIcon"
+                  onClick={() => navigate("admin-page/dashboard")}
+                >
                   <AiOutlineUser size={26} color="white" />
                 </span>
               )}
             </div>
           </div>
-        </div>
+        </section>
         <div id="sponsorBox">
           <ul id="sponsorBox-inner">
-            <li>sp1</li>
-            <li>sp2</li>
-            <li>sp3</li>
+            {!properties && <SkeletonElement type="btn" />}
+            {properties && (
+              <li>
+                <img
+                  src="https://res.cloudinary.com/hafid/image/upload/v1653144657/homePage/favpng_znanylekarz-pl-physician-znamylekar-cz-logo-doctor-of-medicine_jb8igz.png"
+                  alt=""
+                  className="sponsoreLogo"
+                />
+              </li>
+            )}
+            {!properties && <SkeletonElement type="btn" />}
+            {properties && (
+              <li>
+                <img
+                  src="https://www.docplanner.com/logos/logo-tuotempo.svg"
+                  alt=""
+                  className="sponsoreLogo"
+                />
+              </li>
+            )}
+            {!properties && <SkeletonElement type="btn" />}
+            {properties && (
+              <li>
+                <img
+                  src="https://www.docplanner.com/logos/logo-clinicloud.svg"
+                  alt=""
+                  className="sponsoreLogo"
+                />
+              </li>
+            )}
           </ul>
         </div>
         <BestOfferProperties />

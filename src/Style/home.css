@@ -7,24 +7,39 @@
   background-color: var(--primary-color);
 }
 #home-content-inner {
-  max-width: 1000px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   margin: 0 auto;
 }
 #first-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
   width: 500px;
-  margin: 5rem 0 auto 3rem;
 }
 #first-content h1 {
-  font-size: 52px;
-  letter-spacing: 0.14em;
+  font-size: 48px;
+  letter-spacing: 0.12em;
   color: var(--third-color);
 }
-#sloganContent {
-  width: 400px;
-}
 
+#slogan {
+  font-family: "Libre Franklin";
+}
+#btn-discover {
+  text-decoration: none;
+  color: var(--second-color);
+  background-color: rgba(51, 96, 231, 0.762);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  width: fit-content;
+  font-size: 17px;
+}
+#btn-discover:hover {
+  transition: 400ms;
+  background-color: rgba(0, 140, 255, 0.836);
+}
 #second-content {
   width: 500px;
   height: 500px;
@@ -33,10 +48,11 @@
 #homeImage {
   width: 480px;
   height: 500px;
-  border-radius: 250px 250px 0 0;
+  border-radius: 250px 250px 10px 10px;
   position: absolute;
   top: 16%;
-  border: 21px solid rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  border: 6px solid rgba(0, 0, 0, 0.5);
 }
 #accountIcon {
   position: absolute;
@@ -64,6 +80,9 @@
 #sponsorBox-inner li {
   list-style-type: none;
   font-size: 40px;
+}
+.sponsoreLogo {
+  width: 150px;
 }
 
 #searchBar {
@@ -116,4 +135,62 @@
 .searchBar-second-part button:hover {
   background-color: rgba(168, 168, 239, 0.9);
   transition: 500ms;
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    overflow-x: hidden;
+  }
+  #homeImage {
+    width: 450px;
+    margin: 0 16px 0 16px !important;
+  }
+
+  #home-content-inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+  #first-content h1 {
+    font-size: 45px;
+
+    color: var(--second-color);
+    text-shadow: 3px 0px 2px rgb(0, 0, 0);
+  }
+
+  #first-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 100%;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+  }
+  #first-content h1 {
+    font-size: 50px;
+    letter-spacing: 0.12em;
+    color: var(--third-color);
+    text-align: center;
+  }
+
+  .sponsoreLogo {
+    width: 120px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #sponsorBox {
+    position: relative;
+    width: 100%;
+  }
+  #sponsorBox-inner {
+    display: flex;
+    gap: 3rem;
+    margin: 3rem auto auto;
+    width: 100%;
+    justify-content: space-evenly;
+  }
 }

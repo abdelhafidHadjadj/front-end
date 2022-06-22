@@ -4,10 +4,9 @@ import { GoLocation } from "react-icons/go";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { MdOutlineModeEditOutline } from "react-icons/md";
 import { RiWallet3Line } from "react-icons/ri";
-import axios from "axios";
-import { API_URL } from "../config";
-import { useContext, useEffect, useState } from "react";
-import { PropertyContext } from "../PropertiesContext";
+import { useEffect } from "react";
+import Aos from "aos";
+
 export default function PropertyCard({
   property,
   className,
@@ -17,28 +16,23 @@ export default function PropertyCard({
   classNameBtnContract,
   onClickContractIcon,
   role,
+  onClickPropretyUpdate,
+  removeProperty,
 }) {
-  // we'll receive a
-  const { properties, setProperties } = useContext(PropertyContext);
-
   // function removeProperty(propertyId) {
   //   console.log(propertyId);
-  function removeProperty(propertyId) {
-    console.log(propertyId);
-    axios
-      .delete(`${API_URL}/delete-Property/${propertyId}`)
-      .then((res) => {
-        console.log(res.data);
-        setProperties(res.data);
-      })
-      .catch((err) => console.log(err));
-  }
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
 
   return (
     <div className={className}>
       {role == "ADMIN" && (
         <div id={idBox}>
-          <span className={classNameBtnUpdate}>
+          <span
+            className={classNameBtnUpdate}
+            onClick={() => onClickPropretyUpdate(property.id)}
+          >
             <MdOutlineModeEditOutline size={22} />
           </span>
           <span
@@ -78,7 +72,11 @@ export default function PropertyCard({
             <Link to="/property-Detaills">See More</Link>
 
             <p>
-              <span>{property.dealType}</span>/{property.price}
+              <span>
+                {property.dealType.charAt(0).toUpperCase() +
+                  property.dealType.slice(1)}
+              </span>
+              /{property.price}
             </p>
           </div>
         </div>

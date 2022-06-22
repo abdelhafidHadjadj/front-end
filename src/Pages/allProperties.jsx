@@ -1,49 +1,32 @@
 import { useContext, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import MapPositions from "../AdminComponent/MapComp/mapSetOfPosition";
 import Fuse from "fuse.js";
 import { useAuth } from "../authContext";
 import { PropertyContext } from "../PropertiesContext";
 import PropertyCard from "../functions/propertyCard";
 import Navbar from "../components/navbar";
 import { DropDown } from "../options/dropdown";
-
+import { MdFilterList } from "react-icons/md";
+import "../AdminComponent/MapComp/map.css";
 export default function AllProperties() {
   const { properties, setProperties } = useContext(PropertyContext);
 
-  const [listFilter, setListFilter] = useState(properties);
+  const propertiesAvailable = properties.filter(
+    (prop) => prop.available === true
+  );
+
+  const [listFilter, setListFilter] = useState(propertiesAvailable);
   const [searchInput, setSearchInput] = useState("");
 
-  const search = useLocation().search;
-  const name = new URLSearchParams(search);
-  const deal = name.get("deal");
-  const input = name.get("input");
   const [selectedOne, setSelectedOne] = useState("All Types");
   const [selectedTwo, setSelectedTwo] = useState("All Cities");
   const { user } = useAuth();
 
   useEffect(() => {
-    setListFilter(properties);
+    setListFilter(propertiesAvailable);
   }, [properties]);
 
   console.log(listFilter);
-  // let list = [];
-  // if (deal != "" && input != "") {
-  //   list = properties
-  //     .filter((prop) => prop.dealType === deal)
-  //     .filter((prop) => prop.estateType === input);
-  //   setProperties(list);
-  // } else {
-  //   if (deal != "" && input === "") {
-  //     list = properties.filter((prop) => prop.dealType === deal);
-  //     setProperties(list);
-  //     // console.log(newListFilter);
-  //   } else {
-  //     if (deal === "" && input != "") {
-  //       list = properties.filter((prop) => prop.estateType === input);
-  //       setProperties(list);
-  //     }
-  //   }
-  // }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -92,22 +75,31 @@ export default function AllProperties() {
   };
 
   function handleChange(e) {
-    setSearchInput(e.target.value);
-    console.log(searchInput);
-    const options = {
-      includeScore: true,
-      // Search in `author` and in `tags` array
-      keys: ["estateType", "city", "estateDescription"],
-    };
+    if (e.target.value != "") {
+      setSearchInput(e.target.value);
+      console.log(searchInput);
+      const options = {
+        includeScore: true,
+        // Search in `author` and in `tags` array
+        keys: ["estateType", "city", "dealType"],
+      };
 
-    const fuse = new Fuse(properties, options);
+      const fuse = new Fuse(properties, options);
 
-    const result = fuse.search(searchInput);
-    console.log(result);
-    const newList = result.map((result) => result.item);
-    console.log(newList);
-    setListFilter(newList);
+      const result = fuse.search(searchInput);
+      console.log(result);
+      const newList = result.map((result) => result.item);
+      console.log(newList);
+      setListFilter(newList);
+    } else {
+      setListFilter(properties);
+    }
   }
+  // const somePosition = listFilter.map((po) =>
+  //   po.coordination.toString().split(",").map(Number)
+  // );
+
+  // console.log(somePosition);
   return (
     <>
       <Navbar />
@@ -120,7 +112,7 @@ export default function AllProperties() {
             name="search"
             onChange={handleChange}
           />
-          <form onSubmit={handleSubmit} id="filterBar">
+          <form onSubmit={handleSubmit} id="filterBarAdmin">
             <DropDown
               option={types}
               className="estateDropDown"
@@ -137,11 +129,16 @@ export default function AllProperties() {
               classNameItems="listItems"
               id="dropBox"
             />
+
             <input type="number" placeholder="Min Price" name="MinPrice" />
             <input type="number" placeholder="Max Price" name="MaxPrice" />
-            <button type="submit">Filter</button>
+            <button type="submit">
+              <MdFilterList size={20} />
+              Filter
+            </button>
           </form>
         </div>
+        <MapPositions propertiesList={listFilter} mapId="mapClient" />
         <div id="allProperties-box">
           {listFilter.map((prop) => (
             <PropertyCard
@@ -151,7 +148,6 @@ export default function AllProperties() {
               classNameBtnDelete="btn-delete"
               classNameBtnUpdate="btn-update"
               classNameBtnContract="btn-contract"
-              role={user?.role}
             />
           ))}
         </div>

@@ -1,0 +1,39 @@
+#loading {
+  border: 4px solid;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: loading infinite;
+  animation-duration: 4s;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@keyframes loading {
+  0% {
+    border-color: rgb(141, 210, 235);
+    transform: scale(0.3);
+  }
+  20% {
+    border-color: rgb(41, 144, 182);
+    transform: scale(0.6);
+  }
+
+  60% {
+    border-color: rgb(13, 89, 144);
+    transform: scale(1);
+  }
+  80% {
+    border-color: rgb(19, 98, 235);
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(0.3);
+    border-color: rgb(141, 210, 235);
+  }
+}

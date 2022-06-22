@@ -1,0 +1,53 @@
+#client-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+#btn-confirm {
+  border: 1px solid;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  background-color: rgb(173, 173, 245);
+  color: var(--second-color);
+  cursor: pointer;
+}
+#btn-confirm:hover {
+  background-color: rgb(139, 139, 222);
+  transition: 350ms;
+}
+
+#confirmComp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border: 1px solid;
+  width: fit-content;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: rgba(232, 244, 246, 0.91);
+  position: absolute;
+  top: 70%;
+  left: 38%;
+}
+#box-confirm-cancel {
+  display: flex;
+  gap: 2rem;
+}
+#box-confirm-cancel span {
+  border: 1px solid;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#btn-cancel {
+  background-color: rgb(238, 101, 101);
+  color: var(--second-color);
+}
+#btn-cancel:hover {
+  background-color: rgb(209, 63, 63);
+  transition: 350ms;
+}

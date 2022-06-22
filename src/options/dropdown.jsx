@@ -29,15 +29,15 @@ export function DropDown({
         <p>{selected}</p>
       </div>
 
-      <div className={classNameItems}>
-        {isActive && (
+      {isActive && (
+        <div className={classNameItems}>
           <ul>
             {option.map((opt) => (
               <li onClick={() => setSelected(opt)}>{opt}</li>
             ))}
           </ul>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }

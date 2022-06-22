@@ -1,7 +1,6 @@
 header {
   display: flex;
   width: 100%;
-  top: 0;
   background-color: var(--primary-color);
   position: fixed;
   justify-content: center;
@@ -10,37 +9,31 @@ header {
 }
 #navbar {
   display: flex;
-  position: relative;
+
   align-items: center;
   padding: 1rem;
-  min-width: 1200px;
+  width: 100%;
   margin: 0 auto 0 auto;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
-#logoBox {
-  width: 130px;
-  height: 50px;
-  overflow: hidden;
-  position: relative;
-}
 #logo {
-  width: 130px;
-  position: relative;
+  width: 65px;
+  height: 70px;
 }
 
 #list-Items {
   display: flex;
   list-style: none;
-  min-width: 600px;
   justify-content: space-between;
+  width: 600px;
 }
 #list-Items a {
   text-decoration: none;
   color: var(--third-color);
   border-bottom: 1.5px solid;
   border-color: transparent;
-  padding: 0.1rem;
+  padding: 1rem;
 }
 #list-Items a:hover {
   transition: 700ms ease;
@@ -75,4 +68,59 @@ header {
 #btn-signUp:hover {
   background-color: rgba(77, 255, 0, 0.623);
   transition: 500ms ease;
+}
+#menuIcon {
+  cursor: pointer;
+}
+#menuSideBar {
+  display: none;
+}
+
+#menuSideBar ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+}
+#menuSideBar a {
+  text-decoration: none;
+  font-size: 20px;
+  width: 100%;
+  color: var(--third-color);
+  padding: 2.1rem 4rem;
+  transition: 200ms ease-in-out;
+}
+#menuSideBar li {
+  padding: 0;
+}
+#menuSideBar a:hover {
+  background-color: var(--third-color);
+  opacity: 0.6;
+}
+#menuSideBar a:hover li {
+  color: var(--primary-color);
+}
+
+@media only screen and (max-width: 600px) {
+  #navbar {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 1rem 3rem;
+    width: 100%;
+    margin: 0 auto 0 auto;
+    justify-content: space-between;
+  }
+  #menuSideBar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--primary-color);
+    border-radius: 0;
+    overflow: hidden;
+  }
 }

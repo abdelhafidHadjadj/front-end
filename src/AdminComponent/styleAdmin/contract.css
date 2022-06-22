@@ -1,49 +1,175 @@
 #contract-section {
   display: flex;
+  flex-direction: column;
   gap: 3rem;
-  margin: 2rem auto auto 12rem;
+  margin: 2rem auto auto 8rem;
   position: absolute;
+  width: 90%;
 }
+/*___________Add contract component__________*/
 
 #addContract-component {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
-  height: 630px;
-  width: 400px;
+  gap: 2.5rem;
+  width: 60%;
+  height: 80%;
   border: 1px solid;
   border-radius: 5px;
   padding: 1rem;
+  position: fixed;
+  top: 15%;
+  left: 20%;
+  background-color: var(--second-color);
+  box-shadow: 10px 50px 200px 200px rgba(0, 0, 0, 0.281);
 }
 #addContract-component form {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  width: 100%;
+  padding: 1rem;
 }
 
 #addContract-component form input {
   padding: 0.4rem 1rem;
   border-radius: 5px;
+  width: 80%;
 }
 
+#first-box-create-contract {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 .boxInputContract {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-
-#closeBox {
-  width: 100%;
+.boxInputContractDate {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
+  width: 100%;
 }
 
-.deal-price-box {
+#closeBox {
+  position: absolute;
+  top: 3%;
+  right: 2%;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+#usersListSearch {
+  position: absolute;
+  background-color: aliceblue;
+  left: 10%;
+  overflow-y: auto;
+  max-height: 30%;
+  z-index: 10;
+}
+
+#usersListSearch ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+#usersListSearch li {
+  padding: 0.5rem 1rem;
+}
+
+/*_____________Contract list_________________*/
+
+#contract-list {
+  margin: 2rem;
+}
+#contract-table {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  gap: 0.3rem;
+}
+#contract-table-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background-color: rgba(178, 208, 204, 0.681);
+  border-radius: 10px;
+}
+#contract-table-inner {
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background-color: rgba(193, 193, 211, 0.17);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.column {
   display: flex;
   align-items: center;
+  width: 70%;
+  padding: 0.8rem;
+}
+.column-status {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
   gap: 1rem;
+  padding: 0.8rem;
+}
+#pendingIcon {
+  color: green;
+}
+.column-id {
+  font-size: 14px !important;
+  display: flex;
+  padding: 0.2rem;
+  align-items: center;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+.column-hour {
+  width: 50%;
+  display: flex;
+  align-items: center;
+
+  padding: 0.8rem;
+}
+.columnApt {
+  width: 100%;
+}
+.column-id-nav {
+  display: flex;
+  width: 100%;
+  padding: 0.2rem;
+  align-items: center;
+}
+
+#box-conf-delete {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+#btn-del {
+  padding: 0.1rem;
+  border: 1px solid;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.486);
+  color: var(--second-color);
+  cursor: pointer;
+}
+#btn-del:active {
+  background-color: rgb(255, 0, 0);
+  transition: 360ms;
 }

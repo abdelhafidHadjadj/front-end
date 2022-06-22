@@ -159,3 +159,70 @@
   transition: 500ms ease;
   border: 1px solid;
 }
+
+@media only screen and (max-width: 605px) {
+  .login-signUp-section {
+    width: 100%;
+    height: 100%;
+  }
+
+  .first-part-login-signUp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    position: absolute;
+  }
+
+  .login-signUp-image {
+    width: 100%;
+    height: 100%;
+  }
+  #second-part-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 7.5rem;
+    gap: 2rem;
+    position: absolute;
+    top: 0%;
+    left: 20%;
+
+    width: 60%;
+  }
+  #return-icon {
+    position: absolute;
+    top: 8%;
+    left: -15%;
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 0.2rem;
+    color: rgba(0, 0, 0, 0.584);
+  }
+  #redirect-sentence p {
+    color: var(--second-color);
+  }
+  #second-part-signUp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 7.5rem;
+    gap: 2rem;
+    position: absolute;
+    top: -10%;
+    left: 20%;
+
+    width: 60%;
+  }
+  #return-icon-signUp {
+    position: absolute;
+    top: 18%;
+    left: -20%;
+  }
+
+  #errorPwd {
+    color: var(--second-color);
+  }
+}

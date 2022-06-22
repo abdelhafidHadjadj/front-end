@@ -60,15 +60,77 @@
   font-weight: 600;
   cursor: pointer;
 }
-#btn-add-property:active {
+#btn-add-property:hover {
+  transition: 500ms;
   background-color: rgba(140, 140, 248, 1);
 }
-
+#btn-add-property:active {
+  background-color: rgb(80, 80, 224);
+}
+/*____Nav properties________*/
 #nav-properties-admin {
   display: flex;
   margin: 1rem auto 0 auto;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+#filterBar {
+  position: fixed;
+  z-index: 10;
+}
+#filterBarAdmin {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+#filterBarAdmin button {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 0, 0, 0.582);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 500ms;
 }
 
+#filterBarAdmin button:hover {
+  background-color: red;
+}
+.estateDropDownNavAdd {
+  color: var(--primary-color);
+  border: 1px solid;
+  padding: 0.4rem 1rem;
+  border-radius: 5px 5px 5px 5px;
+  width: 150px;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.listItemsNavAdd {
+  position: relative;
+  height: 150px;
+  width: 160px;
+  margin: 0;
+  overflow-y: auto;
+  z-index: 100;
+  background-color: rgba(229, 235, 241, 0.845);
+}
+.listItemsNavAdd ul {
+  padding: 0;
+}
+.listItemsNavAdd li {
+  list-style-type: none;
+  padding: 0.6rem 1.1rem;
+  margin: 0;
+}
+.listItemsNavAdd li:hover {
+  background-color: rgba(215, 70, 70, 0.847);
+  transition: 300ms;
+  cursor: pointer;
+  color: white;
+}
+/*____________________________________*/
 .btn-contract-admin {
   border: 1px solid;
   color: green;
@@ -90,35 +152,112 @@
 .addProperty-box {
   display: flex;
   flex-wrap: wrap;
-
+  flex-direction: column;
   position: relative;
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  width: 500px;
-  height: 500px;
-  gap: 1rem;
+  gap: 2rem;
 }
+#addProperty-content {
+  display: flex;
+}
+
 .addPropertyComponent {
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   border: 1px solid;
-  left: 20%;
+  gap: 1.5rem;
+  align-items: center;
+  top: 10%;
   border: none;
   border-radius: 10px;
-  background-color: rgba(189, 201, 211, 0.896);
+  width: 80%;
+  height: 80%;
+
+  background-color: var(--second-color);
+  box-shadow: 10px 50px 200px 300px rgba(0, 0, 0, 0.281);
 }
-.addPropertyComponent input {
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  border: 1px solid;
+.addPropertyComponent h2 {
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
 }
+.addProperty-box-first input {
+  background-color: transparent;
+  border-top: 1px solid transparent !important;
+  border-left: 1px solid transparent !important;
+  border-right: 1px solid transparent !important;
+  border-radius: 0 !important;
+  padding: 0.3rem 1rem;
+}
+.addProperty-box-first {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.addProperty-box-second {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+#estateDescrp {
+  width: 80%;
+  background-color: transparent;
+}
+
 .addPropertyComponent button {
-  padding: 0.4rem 0.8rem;
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(140, 140, 248, 0.774);
+  width: fit-content;
+  padding: 0.3rem 0.7rem;
+  border-radius: 25px;
+  border: none;
+  color: var(--second-color);
+  font-weight: 500;
+  cursor: pointer;
 }
 #btn-close {
   margin: 0.5rem 0.5rem auto auto;
   font-size: 25px;
+}
+
+/*____________update property__________*/
+
+.updateSelectedDropDown {
+  background-color: transparent;
+  border-top: 1px solid transparent !important;
+  border-left: 1px solid transparent !important;
+  border-right: 1px solid transparent !important;
+  border-bottom: 2px solid black;
+  border-radius: 0 !important;
+  padding: 0.3rem 1rem;
+}
+.listItemsUpdate {
+  overflow-y: auto;
+  position: relative;
+  height: 150px;
+  width: 160px;
+  margin: 0;
+}
+.listItemsUpdate li {
+  list-style-type: none;
+  padding: 0.6rem 1.1rem;
+  margin: 0;
+
+  background-color: var(--second-color);
+  opacity: 0.9;
+}
+
+.listItemsUpdate ul {
+  padding: 0;
+}
+
+.listItemsUpdate li:hover {
+  background-color: rgba(126, 107, 231, 0.57);
+  transition: 300ms;
+  cursor: pointer;
 }
