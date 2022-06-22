@@ -48,7 +48,7 @@ export default function Map({
       maxZoom: 19,
       attribution: "© OpenStreetMap",
     }).addTo(map);
-  }, []);
+  }, [position]);
 
   return (
     <>

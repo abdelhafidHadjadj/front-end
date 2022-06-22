@@ -1,8 +1,11 @@
 import SideBar from "../components/sideBar";
-import { Link } from "react-router-dom";
-import Navbar from "../components/navbar";
-import Dashboard from "../AdminComponent/dahboard";
+
+import { useAuth } from "../authContext";
+import Forbidden from "./403";
 export default function AdminPage() {
+  const { user } = useAuth();
+  if (user.role === "USER") return <Forbidden />;
+
   return (
     <>
       <SideBar />

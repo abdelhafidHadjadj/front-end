@@ -6,6 +6,7 @@ import { arrowLeft } from "react-icons-kit/fa/arrowLeft";
 import { Link } from "react-router-dom";
 import { useAuth } from "../authContext";
 import { useState } from "react";
+import Loading from "../functions/loading";
 export default function Register() {
   const { user, setUser } = useAuth();
   const [loading, setLoading] = useState(false);
@@ -39,7 +40,7 @@ export default function Register() {
         })
         .finally(() => setLoading(false));
     } else {
-      setError("Password incorrect");
+      setError("Incorrect password");
     }
 
     console.log(user);
@@ -55,69 +56,72 @@ export default function Register() {
       </div>
 
       <div id="second-part-signUp">
-        {loading && <p>Loading...</p>}
+        {loading && <Loading />}
+
         <Link to="/">
           <div id="return-icon-signUp">
             <Icon icon={arrowLeft} size={30} />
           </div>
         </Link>
-        <div id="second-part-signUp-inner">
-          <p>Please enter your personal informations to register</p>
-          <form id="signUp-form" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="firstName"
-              placeholder="FirstName"
-              required
-            />
-            <input
-              type="text"
-              name="lastName"
-              placeholder="LastName"
-              required
-            />
-            <input type="email" name="email" placeholder="Email" required />
-            <input type="number" placeholder="Phone Number" name="phone" />
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              required
-            />
-            <input
-              type="password"
-              name="ConfirmPassword"
-              placeholder="Confirm Password"
-              required
-            />
-            {error && <p id="errorPwd">{error}</p>}
-            <button type="submit">
-              Sign Up
-              <svg
-                id="arrow-icon"
-                enable-background="new 0 0 150 50"
-                viewBox="0 0 150 50"
-                version="1.1"
-                y="0px"
-                x="0px"
-              >
-                <g>
-                  <line
-                    y2="24.704"
-                    x1="62"
-                    x2="130"
-                    stroke="#000000"
-                    stroke-miterlimit="10"
-                    y1="24.704"
-                    stroke-width="4"
-                    id="line-icon"
-                  />
-                  <polygon points="124.4 6.284 124.4 44.606 148.35 23.69" />
-                </g>
-              </svg>
-            </button>
-          </form>
-        </div>
+        {!loading && (
+          <div id="second-part-signUp-inner">
+            <p>Please enter your personal informations to register</p>
+            <form id="signUp-form" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="firstName"
+                placeholder="FirstName"
+                required
+              />
+              <input
+                type="text"
+                name="lastName"
+                placeholder="LastName"
+                required
+              />
+              <input type="email" name="email" placeholder="Email" required />
+              <input type="number" placeholder="Phone Number" name="phone" />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+              />
+              <input
+                type="password"
+                name="ConfirmPassword"
+                placeholder="Confirm Password"
+                required
+              />
+              {error && <p id="errorPwd">{error}</p>}
+              <button type="submit">
+                Sign Up
+                <svg
+                  id="arrow-icon"
+                  enable-background="new 0 0 150 50"
+                  viewBox="0 0 150 50"
+                  version="1.1"
+                  y="0px"
+                  x="0px"
+                >
+                  <g>
+                    <line
+                      y2="24.704"
+                      x1="62"
+                      x2="130"
+                      stroke="#000000"
+                      stroke-miterlimit="10"
+                      y1="24.704"
+                      stroke-width="4"
+                      id="line-icon"
+                    />
+                    <polygon points="124.4 6.284 124.4 44.606 148.35 23.69" />
+                  </g>
+                </svg>
+              </button>
+            </form>
+          </div>
+        )}
       </div>
     </section>
   );

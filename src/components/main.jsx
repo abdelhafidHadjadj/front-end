@@ -25,6 +25,7 @@ import Transaction from "../AdminComponent/contractComponents/transactions";
 import ProfitReport from "../AdminComponent/ReportComp/profitsReport";
 import PropertiesReport from "../AdminComponent/ReportComp/propertiesReport";
 import RequireAuth from "../requireAuth";
+import Forbidden from "../Pages/403";
 export default function Main() {
   return (
     <>
@@ -41,6 +42,7 @@ export default function Main() {
                 />
 
                 <Route path="*" element={<NotFound />} />
+                <Route path="/Access-forbidden" element={<Forbidden />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/sign-up" element={<Register />} />
                 <Route path="admin-page" element={<AdminPage />}>

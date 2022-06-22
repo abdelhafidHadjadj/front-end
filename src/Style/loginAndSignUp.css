@@ -224,5 +224,7 @@
 
   #errorPwd {
     color: var(--second-color);
+    position: absolute !important;
+    top: 10%;
   }
 }

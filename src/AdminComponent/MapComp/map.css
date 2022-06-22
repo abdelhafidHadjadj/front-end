@@ -22,12 +22,6 @@
   align-items: center;
 }
 
-.customPopup
-  .leaflet-popup-content-wrapper
-  .leaflet-popup-content
-  .box-detaills-popup {
-}
-
 .customPopup .leaflet-popup-content-wrapper .leaflet-popup-content #imgPopup {
   border-radius: 10px;
 }
