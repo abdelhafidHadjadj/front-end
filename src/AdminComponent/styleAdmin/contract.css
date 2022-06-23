@@ -112,6 +112,25 @@
   background-color: rgba(193, 193, 211, 0.17);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
+#contract-table-structure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 700px;
+  overflow: auto;
+}
+#contract-table-structure::-webkit-scrollbar {
+  width: 0.8em;
+}
+#contract-table-structure::-webkit-scrollbar-thumb {
+  background-color: rgba(104, 114, 126, 0.605);
+  border-radius: 10px;
+}
+#contract-table-structure::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(119, 129, 137, 0.833);
+
+  border-radius: 10px;
+}
 
 .column {
   display: flex;

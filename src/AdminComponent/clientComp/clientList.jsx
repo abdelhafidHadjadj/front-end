@@ -20,14 +20,16 @@ export default function ClientList() {
               <span className="column">Phone</span>
             </div>
           )}
-          {users.map((u) => (
-            <div id="contract-table-inner">
-              <span className="column">{u.id}</span>
-              <span className="column">{u.username}</span>
-              <span className="column">{u.email}</span>
-              <span className="column">{u.phone}</span>
-            </div>
-          ))}
+          <div id="contract-table-structure">
+            {users.map((u) => (
+              <div id="contract-table-inner">
+                <span className="column">{u.id}</span>
+                <span className="column">{u.username}</span>
+                <span className="column">{u.email}</span>
+                <span className="column">{u.phone}</span>
+              </div>
+            ))}
+          </div>
         </article>
       </section>
     </>

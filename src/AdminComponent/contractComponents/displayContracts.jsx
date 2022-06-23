@@ -60,7 +60,7 @@ export default function DisplayContract() {
         {contractList.map((con) => (
           <div id="contract-table-inner">
             <span className="column">{con.employeeId.username}</span>
-            <span className="column-id">{con.propertyId}</span>
+            <span className="column-id">{con.propertyId.id}</span>
             <span className="column">{con.client}</span>
             <span className="column">
               {con.contractType.charAt(0).toUpperCase() +
