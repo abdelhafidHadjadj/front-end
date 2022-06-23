@@ -76,39 +76,41 @@ export default function AppointComp() {
               <span className="column columnApt">Appointment Posted</span>
             </div>
           )}
-          {listOfApt.map((a) => (
-            <div id="contract-table-inner">
-              <span className="column-id">{a.id}</span>
-              <span className="column">{a.clientId.username}</span>
-              <span className="column-id">{a.propertyId}</span>
-              <span className="column">
-                {new Date(a.dateApt).toDateString()}
-              </span>
-              <span className="column-hour">{a.hourApt}</span>
-              <span className="column columnApt">
-                {new Date(a.postedAt).toLocaleString()}
-                <span id="box-conf-delete">
-                  {!a.confirmApt && (
-                    <p
-                      id="btn-confirm"
-                      onClick={() => {
-                        setOpen(!open);
-                        setAptId(a.id);
-                      }}
-                    >
-                      Confirm
-                    </p>
-                  )}
-                  {a.confirmApt && <p>Confirmed</p>}
-                  <MdDeleteOutline
-                    size={26}
-                    id="btn-del"
-                    onClick={() => handleDelete(a.id)}
-                  />
+          <div id="contract-table-structure">
+            {listOfApt.map((a) => (
+              <div id="contract-table-inner">
+                <span className="column-id">{a.id}</span>
+                <span className="column">{a.clientId.username}</span>
+                <span className="column-id">{a.propertyId}</span>
+                <span className="column">
+                  {new Date(a.dateApt).toDateString()}
                 </span>
-              </span>
-            </div>
-          ))}
+                <span className="column-hour">{a.hourApt}</span>
+                <span className="column columnApt">
+                  {new Date(a.postedAt).toLocaleString()}
+                  <span id="box-conf-delete">
+                    {!a.confirmApt && (
+                      <p
+                        id="btn-confirm"
+                        onClick={() => {
+                          setOpen(!open);
+                          setAptId(a.id);
+                        }}
+                      >
+                        Confirm
+                      </p>
+                    )}
+                    {a.confirmApt && <p>Confirmed</p>}
+                    <MdDeleteOutline
+                      size={26}
+                      id="btn-del"
+                      onClick={() => handleDelete(a.id)}
+                    />
+                  </span>
+                </span>
+              </div>
+            ))}
+          </div>
         </article>
         {open && (
           <>

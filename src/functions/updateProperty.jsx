@@ -52,7 +52,7 @@ export default function UpdateProperty({
     };
     setLoading(true);
     axios
-      .put(`${API_URL}/updateAvailabe/${propertyId}`, formDataInput, config)
+      .put(`${API_URL}/update/${propertyId}`, formDataInput, config)
       .then((da) => {
         setFetchedData(da.data);
         console.log(fetchedData);
@@ -78,7 +78,11 @@ export default function UpdateProperty({
     <>
       {open && (
         <div className="addPropertyComponent">
-          <MdOutlineHighlightOff id="btn-close" onClick={handleClose} />
+          <MdOutlineHighlightOff
+            id="btn-close"
+            onClick={handleClose}
+            size={24}
+          />
           {loading && <Loading />}
           {!loading && <h2>Update Property</h2>}
           {!loading && (
@@ -196,6 +200,64 @@ const types = [
   "Office space",
   "Residentails",
 ];
-const city = ["Alger", "Oran", "Bejaia", "Tizi ouzou", "Setif"];
-
+const city = [
+  "Alger",
+  "Oran",
+  "Bejaia",
+  "Tizi ouzou",
+  "Setif",
+  "Adrar",
+  "Chlef",
+  "Laghouat",
+  "Oum El Bouaghi",
+  "Batna",
+  "Biskra",
+  "Bechar",
+  "Blida",
+  "Bouira",
+  "Tamanrasset",
+  "Tebessa",
+  "Tlemcen",
+  "Tiaret",
+  "Djelfa",
+  "Jijel",
+  "Saida",
+  "Skikda",
+  "Sidi Bel Abbes",
+  "Annaba",
+  "Guelma",
+  "Constantine",
+  "Medea",
+  "Mostaganem",
+  "M'Sila",
+  "Mascara",
+  "Ouargla",
+  "Bayadh",
+  "Illizi",
+  "Bordj Bou Arreridj",
+  "Boumerdes",
+  "Tarf",
+  "Tindouf",
+  "Tissemsilt",
+  "Oued",
+  "Khenchela",
+  "Souk Ahras",
+  "Tipaza",
+  "Mila",
+  "Ain Defla",
+  "Naama",
+  "Ain Temouchent",
+  "Ghardaia",
+  "Relizane",
+  "Timimoun",
+  "Bordj Badji Mokhtar",
+  "Ouled Djellal",
+  "Beni Abbes",
+  "In Salah",
+  "In Guezzam",
+  "Touggourt",
+  "Djanet",
+  "M'Ghair",
+  "El Meniaa",
+].sort();
 const deal = ["Rent", "Buy"];

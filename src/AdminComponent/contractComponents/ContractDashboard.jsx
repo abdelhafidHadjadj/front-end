@@ -66,30 +66,31 @@ export default function ContractsDash() {
         </div>
       )}
       {!isDisplay && <p>No Contract</p>}
-      {listOfContracts.map((con) => (
-        <div id="contractDash-table-inner">
-          <span className="columnDash agent-boxDash">
-            <img
-              id="avatarContractDash"
-              src={con.employeeId.avatar[0]}
-              alt=""
-            />
+      <div id="contractDash-smallTable">
+        {listOfContracts.map((con) => (
+          <div id="contractDash-table-inner">
+            <span className="columnDash agent-boxDash">
+              <img
+                id="avatarContractDash"
+                src={con.employeeId.avatar[0]}
+                alt=""
+              />
 
-            {con.employeeId.username}
-          </span>
-          <span className="columnDash">
-            {/* {execute &&
-              properties.find((prop) => prop.id === con.propertyId).city} */}
-          </span>
-          <span className="columnDash">{con.client}</span>
-          <span className="columnDash">
-            {con.contractType.charAt(0).toUpperCase() +
-              con.contractType.slice(1)}
-          </span>
-          <span className="columnDash">{con.price}$</span>
-          <span className="columnDash-status">{con.status}</span>
-        </div>
-      ))}
+              {con.employeeId.username}
+            </span>
+            <span className="columnDash">
+              {con.propertyId.city}, {con.propertyId.adresse}
+            </span>
+            <span className="columnDash">{con.client}</span>
+            <span className="columnDash">
+              {con.contractType.charAt(0).toUpperCase() +
+                con.contractType.slice(1)}
+            </span>
+            <span className="columnDash">{con.price}$</span>
+            <span className="columnDash-status">{con.status}</span>
+          </div>
+        ))}
+      </div>
     </article>
   );
 }
