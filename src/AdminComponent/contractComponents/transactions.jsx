@@ -63,16 +63,18 @@ export default function Transaction() {
           </div>
         )}
         {!isDisplay && <p>No Transaction</p>}
-        {transaction.map((trans) => (
-          <div id="contract-table-inner">
-            <span className="column-id">{trans.contractId}</span>
-            <span className="column">{trans.saleType}</span>
-            <span className="column">{trans.price}$</span>
-            <span className="column">{trans.profitPercentage} %</span>
-            <span className="column">{trans.profitAmount}$</span>
-            <span className="column">{trans.date}</span>
-          </div>
-        ))}
+        <div id="contract-table-structure">
+          {transaction.map((trans) => (
+            <div id="contract-table-inner">
+              <span className="column-id">{trans.contractId}</span>
+              <span className="column">{trans.saleType}</span>
+              <span className="column">{trans.price}$</span>
+              <span className="column">{trans.profitPercentage} %</span>
+              <span className="column">{trans.profitAmount}$</span>
+              <span className="column">{trans.date}</span>
+            </div>
+          ))}
+        </div>
       </article>
     </section>
   );

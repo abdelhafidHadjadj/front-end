@@ -15,7 +15,6 @@ export default function NewContract() {
   const [open, setOpen] = useState(false);
   const { user } = useAuth();
   const { users, setUsers } = useContext(UsersContext);
-  const [propList, setPropList] = useState([]);
   console.log(users);
   function handleClick(propertyId) {
     console.log("click");
@@ -23,14 +22,13 @@ export default function NewContract() {
     setGetPropertyId(propertyId);
     setOpen(!open);
   }
-  useEffect(() => {
-    const list = properties.filter((prop) => prop.contract === false);
-    setPropList(list);
-  }, [properties]);
+  const list = properties.filter((prop) => prop.contract === false);
+
+  console.log(list);
   return (
     <>
       <article id="propertyListAdmin-box">
-        {propList.map((prop) => (
+        {list.map((prop) => (
           <PropertyCard
             property={prop}
             className="propertyCard-admin"

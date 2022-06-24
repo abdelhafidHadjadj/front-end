@@ -68,6 +68,14 @@
   background-color: rgb(80, 80, 224);
 }
 /*____Nav properties________*/
+#header-properties-admin {
+  position: fixed;
+  background-color: var(--second-color);
+  top: 0;
+  padding: 1rem;
+  width: 80%;
+}
+
 #nav-properties-admin {
   display: flex;
   margin: 1rem auto 0 auto;

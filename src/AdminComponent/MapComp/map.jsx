@@ -30,6 +30,7 @@ export default function Map({
     let center_lat = current_lat;
     let center_long = current_long;
     let center_zoom = current_zoom;
+
     map = L.map(mapId, {
       center: [center_lat, center_long],
       zoom: center_zoom,
