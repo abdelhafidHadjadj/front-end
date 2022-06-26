@@ -47,14 +47,15 @@
     display: flex;
     width: 100%;
     align-items: center;
-    gap: 0 !important;
+    justify-content: center;
+    gap: 1rem;
     margin: 48rem auto 5rem auto !important;
-    padding: 0 0 0 2rem !important;
+    width: 100%;
   }
 
   #aboutUs-image {
-    width: 220px;
-    height: 400px;
+    width: 100%;
+    height: 380px;
     border-radius: 200px 200px 10px 10px;
     padding: 0.5rem;
     border: 5px solid rgba(82, 155, 222, 0.38);
@@ -64,17 +65,17 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-size: 18px;
+    font-size: 16px;
   }
   #about-title hr {
-    width: 100px;
+    width: 30%;
     height: 1px;
     border: 0.5px solid rgba(0, 0, 0, 0.226);
   }
 
   #second-part-about p {
     display: flex;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.4;
     letter-spacing: 0.3px;
     text-align: start;
@@ -82,16 +83,10 @@
   #second-part-about {
     display: flex;
     flex-direction: column;
+    margin: 0;
+    width: 50%;
   }
-}
-
-@media only screen and (max-width: 500px) {
-  #about-section {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0;
-    margin: 10rem auto 0rem 0;
-    padding: 0 0 0 9rem;
+  #first-part-about {
+    width: 50%;
   }
 }
