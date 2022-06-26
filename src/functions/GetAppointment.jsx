@@ -27,9 +27,9 @@ export default function GetAppointment({ propId, agId }) {
       })
       .catch((err) => console.log(err));
   }, []);
-  if (!loadUser) return <Loading />;
   console.log(appointmentsList);
   if (!load) return <Loading />;
+  if (!loadUser) return <Loading />;
   console.log(appointmentsList);
 
   const appointment = appointmentsList.find((ap) => ap.clientId.id === user.id);
