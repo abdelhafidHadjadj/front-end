@@ -144,7 +144,9 @@ export default function PropertDetaills() {
         <div id="mapBox">
           <Map Click={false} position={position} mapId="mapDetaillsProperty" />
         </div>
-        <GetAppointment agId={property.agentId} propId={propertyId} />
+        {openApoint && (
+          <GetAppointment agId={property.agentId} propId={propertyId} />
+        )}
       </section>
     </>
   );
