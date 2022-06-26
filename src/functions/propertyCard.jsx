@@ -26,7 +26,7 @@ export default function PropertyCard({
   }, []);
 
   return (
-    <div className={className}>
+    <div className={className} data-aos="zoom-in-up">
       {role == "ADMIN" && (
         <div id={idBox}>
           <span

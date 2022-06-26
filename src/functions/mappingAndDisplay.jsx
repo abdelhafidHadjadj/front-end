@@ -1,5 +1,6 @@
 import PropertyCard from "./propertyCard";
-import Slider from "react-slick";
+import Aos from "aos";
+
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useAuth } from "../authContext";
 import { useEffect, useState, useContext } from "react";
@@ -10,6 +11,11 @@ export default function MappingAndDisplay({ propertyList }) {
   setTimeout(() => {
     setExecute(true);
   }, 1500);
+
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
     <article id="ourProperty-box">
       {/* {propertyList.map((prop) => ( */}

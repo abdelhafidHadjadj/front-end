@@ -6,27 +6,34 @@ import { MdOutlineHighlightOff } from "react-icons/md";
 import axios from "axios";
 import { API_URL } from "../config";
 import { useAuth } from "../authContext";
+import Loading from "../functions/loading";
 export default function GetAppointment({ propId, agId }) {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [hourValue, setHourValue] = useState("");
   const [appointmentsList, setAppointmentsList] = useState([]);
   const minDate = new Date();
   const [isOpen, setIsOpen] = useState(true);
-  const { user } = useAuth();
+  const { user, loadUser } = useAuth();
   const [message, setMessage] = useState("");
+  const [load, setLoad] = useState(false);
   let maxDate = minDate.setDate(minDate.getDate() + 5);
   maxDate = minDate.toString();
-
   useEffect(() => {
     axios
       .get(`${API_URL}/getAppointments`)
       .then((res) => {
         setAppointmentsList(res.data);
+        setLoad(true);
       })
       .catch((err) => console.log(err));
   }, []);
+  if (!loadUser) return <Loading />;
   console.log(appointmentsList);
+  if (!load) return <Loading />;
+  console.log(appointmentsList);
+
   const appointment = appointmentsList.find((ap) => ap.clientId.id === user.id);
+
   console.log(appointment);
   function handleSubmit(e) {
     e.preventDefault();
@@ -38,7 +45,6 @@ export default function GetAppointment({ propId, agId }) {
       hourApt: hourValue,
     };
     console.log(input);
-
     if (appointment === undefined || appointment.confirmApt === true) {
       axios
         .post(`${API_URL}/addAppointments`, input)

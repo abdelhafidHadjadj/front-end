@@ -40,13 +40,10 @@ export default function PropertDetaills() {
       })
       .catch((err) => console.log(err));
   }, []);
-
   if (!load) return <Loading />;
-  console.log(property);
   let arr = property.coordination.toString();
-  const position = arr?.split(",").map(Number);
 
-  console.log(property);
+  const position = arr?.split(",").map(Number);
 
   const images = property.photos;
   const settings = {
@@ -60,13 +57,10 @@ export default function PropertDetaills() {
   };
 
   function handleClickApoint() {
-    if (!user) {
-      navigate("/login");
-    } else {
-      setOpenApoint(!openApoint);
-      console.log("click");
-    }
+    if (!user) return navigate("/login");
+    if (user) return setOpenApoint(!openApoint);
   }
+
   return (
     <>
       <Navbar />
@@ -86,9 +80,7 @@ export default function PropertDetaills() {
             handleClick={handleClickApoint}
           />
         </div>
-        {openApoint && (
-          <GetAppointment agId={property.agentId} propId={property.id} />
-        )}
+
         <div id="second-part-detaills">
           <div id="box-detaills-first-part">
             <span>
@@ -152,6 +144,7 @@ export default function PropertDetaills() {
         <div id="mapBox">
           <Map Click={false} position={position} mapId="mapDetaillsProperty" />
         </div>
+        <GetAppointment agId={property.agentId} propId={propertyId} />
       </section>
     </>
   );

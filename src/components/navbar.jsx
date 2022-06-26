@@ -48,7 +48,7 @@ export default function Navbar() {
               <li id="list-Items">
                 <a href="/">Home</a>
 
-                <a href="/properties">Properties</a>
+                <Link to="properties">Properties</Link>
 
                 <a href="#about-section">About Us</a>
                 <a href="#contact-section">Contact</a>

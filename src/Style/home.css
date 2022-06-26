@@ -83,6 +83,13 @@
 }
 .sponsoreLogo {
   width: 150px;
+  opacity: 0.5;
+  filter: grayscale(80%);
+}
+.sponsoreLogo:hover {
+  transition: 650ms ease;
+  opacity: 1;
+  filter: none;
 }
 
 #searchBar {
@@ -142,21 +149,18 @@
     overflow-x: hidden;
   }
   #homeImage {
-    width: 450px;
-    margin: 0 16px 0 16px !important;
+    width: 90%;
   }
-
+  #second-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
   #home-content-inner {
     width: 100%;
     display: flex;
     align-items: center;
     margin: 0 auto;
-  }
-  #first-content h1 {
-    font-size: 45px;
-
-    color: var(--second-color);
-    text-shadow: 3px 0px 2px rgb(0, 0, 0);
   }
 
   #first-content {
@@ -170,25 +174,23 @@
     align-items: center;
   }
   #first-content h1 {
-    font-size: 50px;
+    font-size: 40px;
     letter-spacing: 0.12em;
     color: var(--third-color);
     text-align: center;
+    text-shadow: 3px 0px 2px rgb(0, 0, 0);
   }
 
   .sponsoreLogo {
-    width: 120px;
+    width: 100px;
   }
-}
 
-@media only screen and (max-width: 500px) {
   #sponsorBox {
     position: relative;
     width: 100%;
   }
   #sponsorBox-inner {
     display: flex;
-    gap: 3rem;
     margin: 3rem auto auto;
     width: 100%;
     justify-content: space-evenly;

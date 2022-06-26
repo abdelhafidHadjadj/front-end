@@ -32,10 +32,10 @@ export default function BestOfferProperties() {
         <div id="propertiesTitle" data-aos="fade-left">
           <h1>Our Properties</h1>
           <hr />
-          <a href="properties" id="discoverAll-box">
-            Discover All
+          <Link to="properties" id="discoverAll-box">
+            <p>Discover All</p>
             <HiOutlineArrowNarrowRight size={26} />
-          </a>
+          </Link>
         </div>
         <MappingAndDisplay propertyList={propertyList} />
       </section>

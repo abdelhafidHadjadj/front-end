@@ -126,45 +126,47 @@ export default function Properties() {
 
   return (
     <section id="propertyListAdmin-section">
-      <h1>Properties</h1>
-      <nav id="nav-properties-admin">
-        <input
-          type="text"
-          id="searchBarFilter"
-          name="search"
-          onChange={handleChange}
-          placeholder="Search Properties"
-        />
-
-        <form onSubmit={handleSubmit} id="filterBarAdmin">
-          <DropDown
-            option={types}
-            className="estateDropDown"
-            selected={selectedOne}
-            setSelected={setSelectedOne}
-            classNameItems="listItemsNavAdd"
-            id="dropBox"
+      <nav id="header-properties-admin">
+        <h1>Properties</h1>
+        <div id="nav-properties-admin">
+          <input
+            type="text"
+            id="searchBarFilter"
+            name="search"
+            onChange={handleChange}
+            placeholder="Search Properties"
           />
-          <DropDown
-            option={city}
-            className="estateDropDownNavAdd"
-            selected={selectedTwo}
-            setSelected={setSelectedTwo}
-            classNameItems="listItemsNavAdd"
-            id="dropBox"
-          />
-          <input type="number" placeholder="Min Price" name="MinPrice" />
-          <input type="number" placeholder="Max Price" name="MaxPrice" />
-          <button type="submit">
-            <MdFilterList size={20} />
-            Filter
-          </button>
-        </form>
 
-        <span id="btn-add-property" onClick={handleOpen}>
-          Add property
-          <RiAddFill size={20} />
-        </span>
+          <form onSubmit={handleSubmit} id="filterBarAdmin">
+            <DropDown
+              option={types}
+              className="estateDropDown"
+              selected={selectedOne}
+              setSelected={setSelectedOne}
+              classNameItems="listItemsNavAdd"
+              id="dropBox"
+            />
+            <DropDown
+              option={city}
+              className="estateDropDownNavAdd"
+              selected={selectedTwo}
+              setSelected={setSelectedTwo}
+              classNameItems="listItemsNavAdd"
+              id="dropBox"
+            />
+            <input type="number" placeholder="Min Price" name="MinPrice" />
+            <input type="number" placeholder="Max Price" name="MaxPrice" />
+            <button type="submit">
+              <MdFilterList size={20} />
+              Filter
+            </button>
+          </form>
+
+          <span id="btn-add-property" onClick={handleOpen}>
+            Add property
+            <RiAddFill size={20} />
+          </span>
+        </div>
       </nav>
       <div id="propertyListAdmin-inner">
         <article id="propertyListAdmin-box">

@@ -18,7 +18,7 @@ export default function AgentCard({ agentId, handleClick }) {
         <p>{agent.email}</p>
         <a href={tel}>{agent.phone}</a>
         <p onClick={handleClick} id="btn-getApoint">
-          Get Apointment
+          Get Appointment
         </p>
       </div>
     </div>
