@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AdminContext } from "../AdminContext";
 import { useAuth } from "../authContext";
 import Loading from "../functions/loading";
-
+import { Link } from "react-router-dom";
 export default function AgentCard({ agentId, handleClick }) {
   const { adminList, loadAdmin } = useContext(AdminContext);
 

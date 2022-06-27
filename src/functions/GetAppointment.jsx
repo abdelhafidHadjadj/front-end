@@ -27,8 +27,8 @@ export default function GetAppointment({ propId, agId }) {
       })
       .catch((err) => console.log(err));
   }, []);
-  console.log(appointmentsList);
-  if (!load) return <Loading />;
+  if (load === false) return <Loading />;
+
   if (!loadUser) return <Loading />;
   console.log(appointmentsList);
 

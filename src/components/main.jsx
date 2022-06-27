@@ -26,6 +26,7 @@ import ProfitReport from "../AdminComponent/ReportComp/profitsReport";
 import PropertiesReport from "../AdminComponent/ReportComp/propertiesReport";
 import RequireAuth from "../requireAuth";
 import Forbidden from "../Pages/403";
+import Profile from "../Pages/Profile";
 export default function Main() {
   return (
     <>
@@ -45,6 +46,7 @@ export default function Main() {
                 <Route path="/Access-forbidden" element={<Forbidden />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/sign-up" element={<Register />} />
+                <Route path="/My-profile" element={<Profile />} />
                 <Route path="admin-page" element={<AdminPage />}>
                   <Route path="dashboard" element={<Dashboard />} />
                   <Route path="properties" element={<Properties />} />

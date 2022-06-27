@@ -35,6 +35,7 @@ export default function Map({
       center: [center_lat, center_long],
       zoom: center_zoom,
     });
+
     if (Click) {
       function onMapClick(e) {
         const coord = e.latlng;
@@ -49,7 +50,7 @@ export default function Map({
       maxZoom: 19,
       attribution: "© OpenStreetMap",
     }).addTo(map);
-  }, [position]);
+  }, []);
 
   return (
     <>
