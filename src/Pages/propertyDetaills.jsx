@@ -58,7 +58,8 @@ export default function PropertDetaills() {
 
   function handleClickApoint() {
     if (!user) return navigate("/login");
-    if (user) return setOpenApoint(!openApoint);
+    setOpenApoint(!openApoint);
+    console.log(openApoint);
   }
 
   return (

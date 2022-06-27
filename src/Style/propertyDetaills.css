@@ -179,7 +179,11 @@
   color: var(--second-color);
 }
 /*_________For mobile screen ___________*/
-@media only screen and (max-width: 605px) {
+@media only screen and (max-width: 600px) {
+  #property-detaills-section {
+    gap: 1.5rem;
+  }
+
   .detaills-img {
     height: 300px !important;
     width: 300px !important;
@@ -227,17 +231,26 @@
     align-items: center;
     margin: 2rem 0 0 0;
     gap: 1.5rem;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 10px;
     color: var(--second-color);
     background-color: var(--fourth-color);
+  }
+  #agent-card img {
+    width: 50%;
+  }
+  #agent-card-content h1 {
+    font-size: 18px;
+  }
+  #box-detaills-first-part h2 {
+    font-size: 24px;
   }
   #first-part-detaills {
     justify-content: center;
     height: fit-content;
   }
   #discription-title-box hr {
-    width: 300px;
+    width: 60%;
     height: 1px;
   }
   #second-part-detaills {
@@ -248,5 +261,34 @@
     padding: 1rem 2rem;
     background-color: var(--fourth-color);
     color: var(--second-color);
+  }
+
+  #list-items-house {
+    gap: 1rem;
+  }
+  #list-items-house span {
+    gap: 1rem;
+  }
+  #return-icon-detaills {
+    top: 6%;
+    left: 1%;
+  }
+  .slick-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    gap: 0;
+  }
+  .slick-slider {
+    width: 100%;
+  }
+  .slick-track {
+    display: flex;
+    gap: 0rem !important;
+  }
+  .slick-slider {
+    display: flex;
+    margin: 3rem auto 2rem auto;
   }
 }

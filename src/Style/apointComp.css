@@ -88,6 +88,9 @@
   transition: 350ms;
   background-color: rgba(16, 109, 195, 0.933);
 }
+#messageApt {
+  padding: 1rem 2rem;
+}
 
 @media only screen and (max-width: 600px) {
   #apoint-comp {
@@ -97,9 +100,10 @@
     align-items: center;
     width: 300px;
     position: fixed;
-    top: 30%;
-    right: 20%;
-    left: 20%;
+    top: 20%;
+    right: 10%;
+    left: 10%;
+
     padding: 1rem;
     background-color: var(--fourth-color);
     box-shadow: 10px 50px 200px 200px rgba(0, 0, 0, 0.281);
@@ -109,7 +113,10 @@
     border-radius: 10px;
     color: var(--second-color);
   }
-}
-#messageApt {
-  padding: 1rem 2rem;
+  #inputDate {
+    background-color: transparent;
+    border-color: transparent transparent var(--second-color) transparent;
+    font-size: 18px;
+    color: var(--second-color);
+  }
 }

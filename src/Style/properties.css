@@ -267,14 +267,4 @@
     padding: 0 1rem 0 1rem;
   }
   /*_________slider  show__________*/
-
-  .slick-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-  }
-  .slick-slider {
-    width: 470px;
-  }
 }
