@@ -84,6 +84,7 @@
 #return-icon {
   position: absolute;
   top: 10%;
+  cursor: pointer;
   left: 53%;
   border: 1px solid;
   border-radius: 50%;
@@ -133,6 +134,7 @@
 
 #return-icon-signUp {
   position: absolute;
+  cursor: pointer;
   top: 10%;
   left: 53%;
   border: 1px solid;

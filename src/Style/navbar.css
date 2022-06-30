@@ -38,6 +38,70 @@ header {
   transition: 700ms ease;
   border-color: rgb(12, 243, 235);
 }
+
+#profile-nav-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#profile-nav-box img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+#profile-nav-box p {
+  color: var(--second-color);
+  cursor: pointer;
+}
+#btn-logout {
+  cursor: pointer;
+}
+
+/*----------logout-----------*/
+#window-box-logout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: var(--primary-color);
+  top: 220%;
+  border-radius: 10px;
+  box-shadow: rgba(1, 1, 1, 0.762) 0px 3px 8px;
+}
+#window-box-logout p {
+  color: var(--second-color);
+}
+
+#btn-exit {
+  background-color: rgba(210, 134, 27, 0.486);
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(255, 0, 0, 0.39);
+  border-radius: 10px;
+  color: var(--second-color);
+}
+#btn-logout-win {
+  background-color: rgba(221, 28, 28, 0.525);
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(255, 0, 0, 0.39);
+  border-radius: 10px;
+  color: var(--second-color);
+}
+#btn-logout-win:hover {
+  transition: 450ms;
+  background-color: rgba(226, 13, 13, 0.84);
+}
+#btn-exit:hover {
+  transition: 450ms;
+  background-color: rgba(232, 151, 20, 0.84);
+}
+#box-btn-window {
+  display: flex;
+  gap: 1rem;
+}
+
 #loginAndSignUpBox {
   display: flex;
   gap: 3rem;
@@ -70,6 +134,7 @@ header {
 }
 #menuIcon {
   cursor: pointer;
+  display: none;
 }
 #menuSideBar {
   display: none;
@@ -102,6 +167,55 @@ header {
   color: var(--primary-color);
 }
 
+/*------------profile box-----------------*/
+
+#profileBox {
+  padding: 1rem;
+  position: absolute;
+  height: max-content;
+  width: max-content;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  top: 80%;
+  box-shadow: rgba(1, 1, 1, 0.762) 0px 3px 8px;
+}
+#profileBox form {
+  display: flex;
+  justify-content: center;
+
+  gap: 0.5rem;
+  flex-direction: column;
+}
+#profileBox-imgBox {
+  position: relative;
+  justify-content: center;
+}
+#profileBox-imgBox img {
+  width: 150px;
+  height: 150px;
+}
+#profileBox form input {
+  border-radius: 10px;
+  border: 1px solid;
+  padding: 0.4rem 0.8rem;
+  background-color: transparent;
+  color: var(--second-color);
+}
+
+#profileBox form button {
+  background-color: rgba(255, 0, 0, 0.585);
+  border: 1px solid;
+  padding: 0.4rem 0.8rem;
+  border-radius: 10px;
+  color: var(--second-color);
+  cursor: pointer;
+}
+#profileBox form button:hover {
+  transition: 350ms;
+  background-color: red;
+  border: 1px solid red;
+}
+
 @media only screen and (max-width: 600px) {
   #navbar {
     display: flex;
@@ -121,5 +235,25 @@ header {
     background-color: var(--primary-color);
     border-radius: 0;
     overflow: hidden;
+  }
+  #menuIcon {
+    display: flex;
+  }
+  #navBarRow {
+    display: none;
+  }
+  #loginAndSignUpBox {
+    display: none;
+  }
+  #profile-nav-box {
+    width: 60%;
+    gap: 0.4rem;
+  }
+  #profile-nav-box p {
+    font-size: 13.5px;
+  }
+  #window-box-logout {
+    left: 20%;
+    right: 20%;
   }
 }

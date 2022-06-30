@@ -11,7 +11,7 @@ import Loading from "../functions/loading";
 import("../Style/loginAndSignUp.css");
 export default function Login() {
   const [error, setError] = useState(null);
-  const { user, setUser } = useAuth();
+  const { user, setUser, setLoggedin } = useAuth();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   function handleSubmit(e) {
@@ -27,6 +27,7 @@ export default function Login() {
       .then((userData) => {
         setUser(userData);
         localStorage.setItem("token", userData.token);
+        setLoggedin(true);
         e.target.reset();
         setLoading(false);
         navigate("/");
@@ -46,11 +47,9 @@ export default function Login() {
         />
       </div>
       <div id="second-part-login">
-        <Link to="/">
-          <div id="return-icon">
-            <Icon icon={arrowLeft} size={30} />
-          </div>
-        </Link>
+        <div id="return-icon">
+          <Icon icon={arrowLeft} size={30} onClick={() => navigate(-1)} />
+        </div>
         <div id="second-part-login-inner">
           {loading && <Loading />}
           {!loading && (

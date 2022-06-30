@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../authContext";
 export default function MenuSidebar() {
+  const { isLoggedin } = useAuth();
+
   return (
     <>
       <aside id="menuSideBar">
@@ -16,12 +19,16 @@ export default function MenuSidebar() {
           <a href="Contact">
             <li>Contact</li>
           </a>
-          <Link to="/login">
-            <li>Login</li>
-          </Link>
-          <Link to="/Sign-up">
-            <li>Sign up</li>
-          </Link>
+          {!isLoggedin && (
+            <>
+              <Link to="/login">
+                <li>Login</li>
+              </Link>
+              <Link to="/Sign-up">
+                <li>Sign up</li>
+              </Link>
+            </>
+          )}
         </ul>
       </aside>
     </>

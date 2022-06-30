@@ -6,6 +6,8 @@ const AuthContext = createContext();
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState({});
   const [loadUser, setLoadUser] = useState(false);
+  const [isLoggedin, setLoggedin] = useState(false);
+
   const token = localStorage.getItem("token");
   const config = {
     headers: { Authorization: `Bearer ${token}` },
@@ -17,12 +19,18 @@ export default function AuthProvider({ children }) {
       .then((res) => {
         setUser(res.data);
         setLoadUser(true);
+        setLoggedin(true);
         console.log(res.data);
       })
-      .catch((err) => console.log(err));
-  }, []);
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [isLoggedin]);
+
   return (
-    <AuthContext.Provider value={{ user, setUser, loadUser }}>
+    <AuthContext.Provider
+      value={{ user, setUser, isLoggedin, setLoggedin, loadUser }}
+    >
       {children}
     </AuthContext.Provider>
   );

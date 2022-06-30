@@ -57,9 +57,11 @@ export default function PropertDetaills() {
   };
 
   function handleClickApoint() {
-    if (!user) return navigate("/login");
-    setOpenApoint(!openApoint);
-    console.log(openApoint);
+    if (Object.keys(user).length === 0) {
+      return navigate("/login");
+    } else {
+      setOpenApoint(!openApoint);
+    }
   }
 
   return (
