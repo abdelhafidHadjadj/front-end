@@ -10,9 +10,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  max-width: 1300px;
 
-  overflow: auto;
   align-items: center;
   padding: 0 auto 0 auto;
   margin: 6rem auto auto 2rem;
@@ -20,6 +18,8 @@
 
 #propertyListAdmin-inner {
   display: flex;
+  overflow-y: auto;
+  height: 650px;
 }
 .propertyCard-admin a {
   display: flex;
@@ -74,6 +74,19 @@
   top: 0;
   padding: 1rem;
   width: 80%;
+  z-index: 10;
+}
+#propertyListAdmin-inner::-webkit-scrollbar {
+  width: 0.8em;
+}
+#propertyListAdmin-inner::-webkit-scrollbar-thumb {
+  background-color: rgba(104, 114, 126, 0.605);
+  border-radius: 10px;
+}
+#propertyListAdmin-inner::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(119, 129, 137, 0.833);
+
+  border-radius: 10px;
 }
 
 #nav-properties-admin {

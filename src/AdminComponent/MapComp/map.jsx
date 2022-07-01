@@ -9,7 +9,7 @@ import "leaflet/dist/leaflet.css";
 export default function Map({
   position,
   setPosition,
-  Click = true,
+  click = true,
   mapId = "map",
 }) {
   var container = L.DomUtil.get("map");
@@ -36,7 +36,7 @@ export default function Map({
       zoom: center_zoom,
     });
 
-    if (Click) {
+    if (click) {
       function onMapClick(e) {
         const coord = e.latlng;
         setPosition(Object.values(coord));

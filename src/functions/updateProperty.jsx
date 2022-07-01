@@ -55,20 +55,22 @@ export default function UpdateProperty({
       .put(`${API_URL}/update/${propertyId}`, formDataInput, config)
       .then((da) => {
         setFetchedData(da.data);
-        console.log(fetchedData);
+        console.log(da.data);
+        const index = propertyList.findIndex((el) => el.id === propertyId);
+        console.log(index);
+        propertyList[index] = da.data;
+
         setLoading(false);
+
         console.log("success");
-        console.log(da);
       })
       .catch((err) => {
         alert(`Operation failed, ${err}`);
         setLoading(false);
         console.log(err);
       });
-
-    setPropertyList(...fetchData);
-    console.log(propertyList);
   }
+  console.log(propertyList);
   const [open, setOpen] = useState(true);
   function handleClose() {
     setOpen(!open);

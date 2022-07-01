@@ -8,7 +8,7 @@ import { useAuth } from "../authContext";
 import { useState } from "react";
 import Loading from "../functions/loading";
 export default function Register() {
-  const { user, setUser } = useAuth();
+  const { user, setUser, setLoggedin } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -31,6 +31,7 @@ export default function Register() {
           setUser(user);
           localStorage.setItem("token", user.token);
           e.target.reset();
+          setLoggedin(true);
           console.log(user);
           navigate("/");
         })
@@ -80,7 +81,7 @@ export default function Register() {
                 required
               />
               <input type="email" name="email" placeholder="Email" required />
-              <input type="number" placeholder="Phone Number" name="phone" />
+              <input type="tel" placeholder="Phone Number" name="phone" />
               <input
                 type="password"
                 name="password"

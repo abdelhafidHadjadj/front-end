@@ -66,6 +66,9 @@ export default function AddProperty({
         console.log(da.data);
         setLoading(false);
         alert("Property Added");
+        const arr = [...propertyList, da.data];
+        setPropertyList(arr);
+
         console.log("success");
       })
       .catch((err) => {
