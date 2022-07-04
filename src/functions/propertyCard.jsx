@@ -51,7 +51,10 @@ export default function PropertyCard({
       )}
       <Link to={`/property-Detaills/${property.id}`}>
         <div id="imgCard">
-          <img src={property.photos[0]} alt="" />
+          <img
+            src={property.photos[0]}
+            alt={`${property.estateType} for ${property.dealType} in ${property.adresse} street in ${property.city}`}
+          />
         </div>
         <div id="imgCardContent">
           <p className="property-card-Icon-box">

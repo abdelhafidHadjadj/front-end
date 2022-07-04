@@ -22,7 +22,7 @@ export default function Contact() {
           <span className="picture1">
             <img
               src="https://res.cloudinary.com/hafid/image/upload/v1655225793/homePage/handsome-corporate-man-real-estate-agent-assistant-smiling-hold-hands-together-how-may-i-help-you-smiling-friendly-polite-assist-customer-white-background_2_mwjxoo.jpg"
-              alt=""
+              alt="Showing Assistant at modern house agency Algeria"
               className="pictureAgent"
             />
           </span>
@@ -35,7 +35,7 @@ export default function Contact() {
           <span className="picture2">
             <img
               src="https://res.cloudinary.com/hafid/image/upload/v1655224399/homePage/shipman-northcutt-sgZX15Da8YE-unsplash_kw769a.jpg"
-              alt=""
+              alt="Administrative Manager at modern house agency in Algeria"
               className="pictureAgent"
             />
           </span>
@@ -48,7 +48,7 @@ export default function Contact() {
           <span className="picture3">
             <img
               src="https://res.cloudinary.com/hafid/image/upload/v1655227401/homePage/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash_uqqa3f.jpg"
-              alt=""
+              alt="Marketing Director at modern house agency in Algeria"
               className="pictureAgent"
             />
           </span>

@@ -3,8 +3,7 @@ import "../Style/home.css";
 import Navbar from "../components/navbar";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { DropDown } from "../options/dropdown";
-import { API_URL } from "../config";
+
 import BestOfferProperties from "./bestOfferProperties";
 import About from "./About";
 import Contact from "./contact";
@@ -14,6 +13,8 @@ import { useNavigate } from "react-router";
 import { useAuth } from "../authContext";
 import SkeletonElement from "../skeletons/skeletonElement";
 import { PropertyContext } from "../PropertiesContext";
+
+import Head from "next/head";
 export default function Home() {
   useEffect(() => {
     Aos.init({ duration: 2000 });
@@ -33,6 +34,14 @@ export default function Home() {
   return (
     <>
       <main>
+        <Head>
+          <meta charset="utf-8" />
+          <title>Modern House Agency | MHA - ALGIERS</title>
+          <meta
+            name="description"
+            content="Chosen for our service. Find your perfect property with Modern House agency, Properties for sales in algeria"
+          />
+        </Head>
         <Navbar />
         <section id="home-content">
           <div id="home-content-inner">
@@ -55,7 +64,7 @@ export default function Home() {
               <img
                 data-aos="fade-up"
                 src="https://res.cloudinary.com/hafid/image/upload/v1650040618/homePage/pymu2zdztn4ypb0h8psk.jpg"
-                alt=""
+                alt="Real estate agency in algeria"
                 id="homeImage"
               />
 
