@@ -8,6 +8,7 @@ import Navbar from "../components/navbar";
 import { DropDown } from "../options/dropdown";
 import { MdFilterList } from "react-icons/md";
 import "../AdminComponent/MapComp/map.css";
+import { Helmet } from "react-helmet";
 export default function AllProperties() {
   const { properties, setProperties } = useContext(PropertyContext);
 
@@ -102,6 +103,15 @@ export default function AllProperties() {
   // console.log(somePosition);
   return (
     <>
+      <Helmet>
+        <meta charset="utf-8" />
+        <meta name="robots" content="all" />
+        <title>Modern House Agency | MHA Discover The Perfect Properties</title>
+        <meta
+          name="description"
+          content="Chosen for our service. Find your perfect property with Modern House agency, Properties for sales in algeria"
+        />
+      </Helmet>
       <Navbar />
       <section id="allProperties-section">
         <div id="filterBar">
