@@ -35,7 +35,7 @@ export default function Main() {
           <UsersProvider>
             <AdminProvider>
               <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="" element={<Home />} />
                 <Route path="/upload" element={<Upload />} />
                 <Route
                   path="/property-Detaills/:propertyId"
