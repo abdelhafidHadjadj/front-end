@@ -36,6 +36,10 @@ export default function Home() {
         <Helmet>
           <meta charset="utf-8" />
           <meta name="robots" content="all" />
+          <meta
+            name="keywords"
+            content="modern,house,modern house,Modern House Agency | MHA Real estate -ALGIERS-, MHA,Modern house agency,modern house algiers, rent villa, rent apartment, rent store, buy villa, buy apartment, buy store, rent buy house in algeria"
+          />
           <title>Modern House Agency | MHA Real estate -ALGIERS-</title>
           <meta
             name="description"

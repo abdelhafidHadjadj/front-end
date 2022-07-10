@@ -34,10 +34,12 @@ export default function Login() {
         navigate("/");
       })
       .catch((err) => {
-        setError(err.response.data);
+        setError(err.response.data.message);
+        setLoading(false);
       });
   }
 
+  console.log(error);
   return (
     <>
       <Helmet>
@@ -66,6 +68,11 @@ export default function Login() {
             {!loading && (
               <>
                 <p>Please enter your email and password to login.</p>
+                {error && (
+                  <p style={{ color: "red" }}>
+                    User {error}, Please verify your email and password
+                  </p>
+                )}
                 <form id="form-login" onSubmit={handleSubmit}>
                   <input type="email" placeholder="Email" name="email" />
                   <input
