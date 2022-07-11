@@ -4,14 +4,14 @@ import SkeletonElement from "../skeletons/skeletonElement";
 import { useEffect, useState, useRef } from "react";
 import MenuSidebar from "../options/menuSidebar";
 import { FiMenu } from "react-icons/fi";
+import { IoMdClose } from "react-icons/io";
 import { useAuth } from "../authContext";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import axios from "axios";
 import { API_URL } from "../config";
 import { MdOutlineEdit } from "react-icons/md";
-import Loading from "../functions/loading";
 export default function Navbar() {
-  const [openMenu, setOpenMenu] = useState(false);
+  const [closeIcon, setCloseIcon] = useState(false);
   const { user, loadUser, isLoggedin, setLoggedin } = useAuth();
   const [load, setLoad] = useState(false);
   const [listUsersAdmins, setListUsersAdmins] = useState([]);
@@ -45,6 +45,9 @@ export default function Navbar() {
   let drop = useRef();
   function handleClick() {
     setIsActive(!isActive);
+    setCloseIcon(!closeIcon);
+    console.log(closeIcon);
+    console.log(isActive);
   }
 
   const close = () => setIsActive(false);
@@ -229,8 +232,14 @@ export default function Navbar() {
             )}
           </>
           <span onClick={handleClick} id="menuIcon" ref={drop}>
-            <FiMenu size={33} color="white" />
+            <span style={{ display: !isActive ? "block" : "none" }}>
+              <FiMenu size={33} color="white" />
+            </span>
+            <span style={{ display: isActive ? "block" : "none" }}>
+              <IoMdClose size={33} color="white" />
+            </span>
           </span>
+
           {isActive && <MenuSidebar />}
         </nav>
       </header>
