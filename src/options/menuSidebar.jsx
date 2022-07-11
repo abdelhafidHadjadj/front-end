@@ -16,7 +16,7 @@ export default function MenuSidebar() {
           <a href="#about-section">
             <li>About Us</li>
           </a>
-          <a href="Contact">
+          <a href="#contact-section">
             <li>Contact</li>
           </a>
           {!isLoggedin && (
